@@ -1,2 +1,2 @@
 # madide-kudaranai-site
-test
+これは友達に送るためだけにあるくだらないものです。
