@@ -35,6 +35,39 @@
 	text-align: center;
 }
 
+#auth-panel, #history-panel {
+	padding: 16px;
+}
+
+#auth-panel .btn {
+	margin: 8px;
+}
+
+#auth-status {
+	overflow-wrap: anywhere;
+}
+
+#history-list {
+	list-style: none;
+	padding: 0;
+	text-align: left;
+}
+
+#history-list li {
+	padding: 10px 0;
+	border-bottom: 1px solid #aaa;
+}
+
+#history-list time {
+	display: block;
+	color: #555;
+	font-size: 0.85em;
+}
+
+[hidden] {
+	display: none !important;
+}
+
 #main {
 	height: auto;
 }

@@ -14,6 +14,13 @@
 <body>
 	
 	<h1 style="color: dimgray;">略称作成サイト</h1>
+	<section id="auth-panel" class="box" aria-labelledby="auth-title">
+		<h2 id="auth-title">ログイン</h2>
+		<p id="auth-status" class="text" aria-live="polite">ログインすると略称の履歴を保存できます。</p>
+		<button id="login-btn" class="btn" type="button">Googleでログイン</button>
+		<button id="logout-btn" class="btn" type="button" hidden>ログアウト</button>
+		<p id="auth-message" class="text" role="status" aria-live="polite"></p>
+	</section>
 	
 	<div id="main" class="box">
 		<p class="text">好きなワードの略称をランダムで考えてくれます</p>
@@ -30,8 +37,17 @@
 	<button id="make-btn3" class="btn">おまかせワード</button>
 	
 	</div>
+
+	<section id="history-panel" class="box" aria-labelledby="history-title" hidden>
+		<h2 id="history-title">生成履歴</h2>
+		<p id="history-status" class="text" aria-live="polite"></p>
+		<ul id="history-list"></ul>
+	</section>
 	
+	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 	<script src="indexjsfile/string.js"></script>
+	<script src="indexjsfile/supabase.js"></script>
+	<script src="indexjsfile/history.js"></script>
 	<script src="indexjsfile/main.js"></script>
 </body>
 </html>
