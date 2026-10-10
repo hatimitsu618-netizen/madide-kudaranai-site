@@ -12,6 +12,7 @@ buttons['make-btn1'].addEventListener('click', function () {
 	if (inputWord !== "") {
 		const shortWord = makeShortWord(inputWord); //string.js>makeShortWord(inputWord)
 		resultText.textContent = shortWord;
+		window.saveAbbreviationHistory?.(inputWord, shortWord);
 	}	
 });
 
