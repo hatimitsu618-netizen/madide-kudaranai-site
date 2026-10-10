@@ -1,6 +1,0 @@
-name = "madide-kudaranai-site"
-main = "src/index.js" # ご自身のJavaScriptのエントリーポイント（メインのファイルパス）に合わせて変更してください
-compatibility_date = "2026-10-10"
-
-[previews]
-# プレビュー環境用の設定ブロック
