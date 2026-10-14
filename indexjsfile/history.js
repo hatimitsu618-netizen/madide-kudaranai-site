@@ -67,9 +67,10 @@ async function updateAuthUI(session) {
 }
 
 loginButton.addEventListener("click", async () => {
+	const redirectTo = `${window.location.origin}${window.location.pathname}`;
 	const { error } = await authClient.auth.signInWithOAuth({
 		provider: "google",
-		options: { redirectTo: window.location.href }
+		options: { redirectTo }
 	});
 	if (error) showAuthError(error);
 });
