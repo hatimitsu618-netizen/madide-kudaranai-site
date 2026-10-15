@@ -100,6 +100,12 @@ window.saveAbbreviationHistory = async (inputWord, resultWord) => {
 		showAuthError(error);
 		return;
 	}
+
+	const { error: cleanupError } = await authClient.rpc("trim_abbreviation_history");
+	if (cleanupError) {
+		showAuthError(cleanupError);
+		return;
+	}
 	await loadHistory();
 };
 

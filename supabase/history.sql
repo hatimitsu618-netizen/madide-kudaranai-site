@@ -30,3 +30,24 @@ on public.abbreviation_history
 for delete
 to authenticated
 using ((select auth.uid()) = user_id);
+
+-- Keep only each user's 50 newest rows after a new abbreviation is saved.
+create or replace function public.trim_abbreviation_history()
+returns void
+language sql
+security invoker
+set search_path = ''
+as $$
+  delete from public.abbreviation_history as history
+  where history.user_id = (select auth.uid())
+    and history.id not in (
+      select newest.id
+      from public.abbreviation_history as newest
+      where newest.user_id = (select auth.uid())
+      order by newest.created_at desc, newest.id desc
+      limit 50
+    );
+$$;
+
+revoke all on function public.trim_abbreviation_history() from public, anon;
+grant execute on function public.trim_abbreviation_history() to authenticated;
