@@ -31,8 +31,9 @@ buttons['make-btn3'].addEventListener('click', function () {
 // Xで共有ボタン
 buttons['share-btn'].addEventListener('click', function () {
 	const text = resultText.textContent;
+	const inputWord = playerInput.value;
 	if (text && text !== "<ここに出力されます>") {
-		const shareText = `略称作成サイトで「${text}」が生成されました！`;
+		const shareText = `「${inputWord}」の新たな略称「${text}」を作成しました！\n新たな略称を作ってみよう！\nhttps://madide-kudaranai-site.pages.dev/#`;
 		const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
 		window.open(url, '_blank', 'width=550,height=420');
 	}
